@@ -3,10 +3,10 @@
 Write this yourself, in your own words. It is the part of the repo that proves the work is yours.
 
 ## What the agent got wrong
-(Every agent gets something wrong on a job this size. What did you catch? How did you notice?)
+The agent deleted three helper functions (is_due, parse_service_date, chunk_list) that I never asked it to remove. It also treats a car with no service reading as 0% worn, which lowers the average. I noticed this when I read its summary of changes.
 
 ## What I checked before I accepted its work
-(How do you KNOW the wear bug is fixed and the 80% rule is untouched? What did you run?)
+I ran the tests, and all of them passed. I ran verify.py, which showed the wear is now about 99.3% for a car at 14,900 km. I also checked that the 15000 km interval and the 80% threshold are the same as before, in both the code and settings.cfg.
 
 ## What the data actually said
-(Which factors predict a breakdown, and which obvious-looking one turned out not to?)
+Cars broke down more when they had gone far since their last service, drove many km per day, and carried heavy loads. Age and total mileage made no difference, even though they look like obvious causes.
